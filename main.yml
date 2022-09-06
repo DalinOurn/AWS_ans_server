@@ -14,3 +14,19 @@
      - maven
    tags:
      - maven
+ 
+ 
+ - hosts: tomcat
+   become: true
+   roles: 
+     - tomcat
+   tags:
+     - tomcat 
+
+ - hosts: tomcat
+   become: true
+   roles:
+     - apache
+   tags:
+     - apache
+
