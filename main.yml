@@ -7,6 +7,20 @@
    tags: 
      - jenkins
 
+ - hosts: nginx
+   become: true
+   roles:
+     - nginx
+   tags:
+     - nginx
+ 
+ - hosts: nginx
+   become: true
+   roles:
+     - nodejs
+   tags: 
+     - nodejs
+ 
  
  - hosts: jenkin
    become: true
