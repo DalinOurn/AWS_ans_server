@@ -3,44 +3,19 @@
  - hosts: jenkin
    become: true
    roles:
-     - jenkins
-   tags: 
-     - jenkins
+     - role: jenkins
+       tags: jenkins
+     - role: nginx
+       tags: nginx
+     - role: maven
+       tags: maven
 
- - hosts: nginx
-   become: true
-   roles:
-     - nginx
-   tags:
-     - nginx
- 
- - hosts: nginx
-   become: true
-   roles:
-     - nodejs
-   tags: 
-     - nodejs
- 
- 
- - hosts: jenkin
-   become: true
-   roles:
-     - maven
-   tags:
-     - maven
- 
- 
  - hosts: tomcat
    become: true
    roles: 
-     - tomcat
-   tags:
-     - tomcat 
+     - role: tomcat
+       tags: tomcat
+     - role: apache
+       tags: apache 
 
- - hosts: tomcat
-   become: true
-   roles:
-     - apache
-   tags:
-     - apache
 
